@@ -10,6 +10,12 @@
     background-color: blue;
     display:block;
     padding: 2px 4px;
+
+    height: 30px;
+    line-height: 30px;
+  }
+  p{
+    margin: 0;
   }
     </style>
   </head>
@@ -27,9 +33,9 @@
 
   </section>
 
-  <section class="case" id="fastArea">
+  <section class="case fastArea">
 
-    <h2>fastclick</h2>
+    <h2>fastclick label无嵌套</h2>
 
     <input type="radio" name="gender" value="男" id="fast-gender-man">
     <label for="fast-gender-man">男</label>
@@ -39,15 +45,30 @@
 
   </section>
 
+  <section class="case fastArea">
+
+    <h2>fastclick label有嵌套</h2>
+
+    <input type="radio" name="gender" value="男" id="fast-2-gender-man">
+    <label for="fast-2-gender-man"><p>男</p></label>
+
+    <input type="radio" name="gender" value="女" id="fast-2-gender-woman">
+    <label for="fast-2-gender-woman"><p>女</p></label>
+
+  </section>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
   <script>
 
     $(function(){
 
-      var fastArea = document.getElementById('fastArea');
+      $fastAreas = $('.fastArea');
 
-      FastClick.attach(fastArea);
+      $fastAreas.each(function(){
+        FastClick.attach(this);
+      });
+
     });
 
   </script>
