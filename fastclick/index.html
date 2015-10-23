@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>fastclick测试</title>
+    <style>
+  label{
+    color: #fff;
+    background-color: blue;
+    display:block;
+    padding: 2px 4px;
+  }
+    </style>
+  </head>
+  <body>
+
+  <section class="case">
+
+    <h2>native click</h2>
+
+    <input type="radio" name="gender" value="男" id="gender-man">
+    <label for="gender-man">男</label>
+
+    <input type="radio" name="gender" value="女" id="gender-woman">
+    <label for="gender-woman">女</label>
+
+  </section>
+
+  <section class="case" id="fastArea">
+
+    <h2>fastclick</h2>
+
+    <input type="radio" name="gender" value="男" id="fast-gender-man">
+    <label for="fast-gender-man">男</label>
+
+    <input type="radio" name="gender" value="女" id="fast-gender-woman">
+    <label for="fast-gender-woman">女</label>
+
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  <script>
+
+    $(function(){
+
+      var fastArea = document.getElementById('fastArea');
+
+      FastClick.attach(fastArea);
+    });
+
+  </script>
+  </body>
+</html>
